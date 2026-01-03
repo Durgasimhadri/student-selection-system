@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Selection System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="home-container">
+    <h1>🎓 Student Selection Portal</h1>
+    <p>Welcome! Choose your action below:</p>
+
+    <div class="card-container">
+        <div class="card">
+            <h2>Student Registration</h2>
+            <p>Register yourself to be considered for selection.</p>
+            <a href="/register" class="btn">Register</a>
+        </div>
+
+        <div class="card">
+            <h2>Admin Panel</h2>
+            <p>Login to manage student applications and select candidates.</p>
+            <a href="/admin_login" class="btn">Admin Login</a>
+        </div>
+
+        <div class="card">
+            <h2>Check Status</h2>
+            <p>Students can check their selection status here.</p>
+            <a href="/status" class="btn">View Status</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

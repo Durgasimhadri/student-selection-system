@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body class="admin-page">
+
+    <h2>Admin - Student Selection</h2>
+
+    <table border="1" cellpadding="8">
+        <tr>
+            <th>Name</th>
+            <th>Qualification</th>
+            <th>Marks</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+
+        {% for s in students %}
+        <tr>
+            <td>{{ s[0] }}</td>
+            <td>{{ s[1] }}</td>
+            <td>{{ s[2] }}</td>
+            <td>{{ s[3] }}</td>
+            <td>
+                {% if s[3] == 'Pending' %}
+                    <a href="/select/{{ s[0] }}">Select</a> |
+                    <a href="/reject/{{ s[0] }}">Reject</a>
+                {% else %}
+                    ---
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+
+
+    <p style="text-align:center;">
+    <a href="/logout">Logout</a> | <a href="/">Home</a>
+</p>
+
+
+</body>
+</html>
